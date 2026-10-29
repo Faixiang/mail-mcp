@@ -1,0 +1,19 @@
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+build/
+.venv/
+venv/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# 凭据与运行时，绝不入库
+.mail-mcp/
+policy.yaml
+*.token
+credentials.json
+state.db
+logs/
+sandbox/

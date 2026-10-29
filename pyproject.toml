@@ -1,0 +1,31 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mail-mcp"
+version = "0.1.0"
+description = "Unified multi-provider email MCP server with policy engine and reader/full profiles"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "Faixiang" }]
+dependencies = [
+    "mcp>=1.2.0",
+    "pyyaml>=6.0",
+    "python-dateutil>=2.8",
+]
+
+[project.optional-dependencies]
+imap = ["aioimaplib>=1.0"]
+gmail = ["google-api-python-client>=2.100", "google-auth-oauthlib>=1.1"]
+dev = ["pytest>=8.0", "pytest-asyncio>=0.23", "ruff>=0.5"]
+
+[project.scripts]
+mail-mcp = "mail_mcp.server:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.ruff]
+line-length = 100

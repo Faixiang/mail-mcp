@@ -1,0 +1,14 @@
+{
+  "mcpServers": {
+    "mail-reader": {
+      "command": "mail-mcp",
+      "args": ["--profile", "reader", "--provider", "imap", "--account", "you@qq.com"],
+      "env": { "MAIL_MCP_PASSWORD": "your-app-specific-password" }
+    },
+    "mail-writer": {
+      "command": "mail-mcp",
+      "args": ["--profile", "full", "--provider", "imap", "--account", "you@qq.com", "--policy", "~/.mail-mcp/policy.yaml"],
+      "env": { "MAIL_MCP_PASSWORD": "your-app-specific-password" }
+    }
+  }
+}
