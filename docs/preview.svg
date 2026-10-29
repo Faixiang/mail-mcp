@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="920" height="640" viewBox="0 0 920 640" role="img" aria-label="Example MCP session: read a message, attempt a reply, hit the policy gate, confirm, send">
+﻿<svg xmlns="http://www.w3.org/2000/svg" width="920" height="640" viewBox="0 0 920 640" role="img" aria-label="Example MCP session: read a message, attempt a reply, hit the policy gate, confirm, send">
   <defs>
     <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
       <stop offset="0%" stop-color="#0e1622"/>
@@ -32,7 +32,7 @@
 
   <!-- write attempt blocked by gate -->
   <text x="60" y="302" font-family="Consolas, Menlo, monospace" font-size="14" fill="#22d3ee">→ reply_message</text>
-  <text x="60" y="322" font-family="Consolas, Menlo, monospace" font-size="14" fill="#6b7f9c">{ "message_id": "1042", "body": "Confirmed — payment goes out Friday.", "intent": "confirm rent date" }</text>
+  <text x="60" y="322" font-family="Consolas, Menlo, monospace" font-size="14" fill="#6b7f9c">{ "message_id": "1042", "body": "Payment goes out Friday.", "intent": "rent date" }</text>
 
   <rect x="60" y="338" width="800" height="66" rx="10" fill="#1b1418" stroke="#4a2730"/>
   <text x="82" y="364" font-family="Consolas, Menlo, monospace" font-size="13" fill="#e0a34a">E_NEED_CONFIRM   gate: whitelist   k.chan@landlord.example is not in the allowlist</text>
