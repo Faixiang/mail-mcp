@@ -83,6 +83,16 @@ MCP 是请求-响应模型，server 生命周期随 client，没有入站通道�
 
 所以：MCP 无状态、可随时启停；触发层极薄、不含模型逻辑；两者只通过事件契约通信，且**事件不携带正文**。
 
+### 触发层实现在哪
+
+不在 `main`，在 [`feat/trigger-layer`](https://github.com/Faixiang/mail-mcp/tree/feat/trigger-layer) 分支：
+
+- 代码：`src/mail_mcp/trigger/`（contracts / bus / source_imap / consumer / daemon）
+- 说明：[docs/trigger.md](https://github.com/Faixiang/mail-mcp/blob/feat/trigger-layer/docs/trigger.md)
+- 测试：4 个文件、25 条用例，与主仓 44 条一并跑通（69 passed）
+
+它是可独立部署的进程，不 import `mcp`，也不含任何提示词逻辑。消费者只收到 `event_id` 与元数据，正文要回头经 MCP 读取，从而必然经过消毒层。
+
 ## License
 
 MIT
