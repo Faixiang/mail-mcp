@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="320" viewBox="0 0 1200 320" role="img" aria-label="Mail-Mcp — email as MCP tools with a policy gate">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0a1320"/>
+      <stop offset="55%" stop-color="#0f1d2e"/>
+      <stop offset="100%" stop-color="#141033"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#22d3ee"/>
+      <stop offset="100%" stop-color="#5b8cff"/>
+    </linearGradient>
+    <linearGradient id="line" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#22d3ee"/>
+      <stop offset="100%" stop-color="#8b5cf6"/>
+    </linearGradient>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0H0V40" fill="none" stroke="#ffffff" stroke-opacity="0.04" stroke-width="1"/>
+    </pattern>
+  </defs>
+
+  <rect width="1200" height="320" fill="url(#bg)"/>
+  <rect width="1200" height="320" fill="url(#grid)"/>
+
+  <!-- envelope + gate motif -->
+  <g fill="none" stroke="url(#line)" stroke-opacity="0.6" stroke-width="1.4">
+    <rect x="812" y="96" width="300" height="180" rx="14"/>
+    <path d="M812 116 L962 208 L1112 116"/>
+    <path d="M812 276 L918 190 M1112 276 L1006 190"/>
+    <circle cx="962" cy="208" r="4" fill="#22d3ee" stroke="none"/>
+  </g>
+  <g stroke="#22d3ee" stroke-opacity="0.85" stroke-width="2">
+    <path d="M962 66 L962 96"/>
+  </g>
+  <rect x="900" y="42" width="124" height="24" rx="12" fill="#22d3ee" fill-opacity="0.10" stroke="#22d3ee" stroke-opacity="0.45"/>
+  <text x="962" y="59" text-anchor="middle" font-family="Consolas, Menlo, monospace" font-size="12" fill="#7fe3f2">policy gate</text>
+
+  <text x="80" y="118" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="64" font-weight="700" fill="#ffffff" letter-spacing="-1">Mail-Mcp</text>
+  <rect x="80" y="140" width="132" height="6" rx="3" fill="url(#accent)"/>
+
+  <text x="80" y="192" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="24" fill="#9fb0c9">Email, as tools an agent can use — without trusting what it reads</text>
+  <text x="80" y="228" font-family="Consolas, Menlo, monospace" font-size="18" fill="#6b7f9c">multi-provider  ·  policy-gated writes  ·  untrusted by default</text>
+
+  <g font-family="Consolas, Menlo, monospace" font-size="14">
+    <rect x="80" y="250" width="128" height="30" rx="15" fill="#ffffff" fill-opacity="0.06"/>
+    <text x="144" y="270" text-anchor="middle" fill="#c9d6e8">python 3.10+</text>
+    <rect x="220" y="250" width="118" height="30" rx="15" fill="#ffffff" fill-opacity="0.06"/>
+    <text x="279" y="270" text-anchor="middle" fill="#c9d6e8">stdio MCP</text>
+    <rect x="350" y="250" width="130" height="30" rx="15" fill="#ffffff" fill-opacity="0.06"/>
+    <text x="415" y="270" text-anchor="middle" fill="#c9d6e8">3 profiles</text>
+    <rect x="492" y="250" width="140" height="30" rx="15" fill="#ffffff" fill-opacity="0.06"/>
+    <text x="562" y="270" text-anchor="middle" fill="#c9d6e8">imap / smtp</text>
+  </g>
+</svg>
