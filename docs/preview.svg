@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="920" height="640" viewBox="0 0 920 640" role="img" aria-label="Example MCP session: read a message, attempt a reply, hit the policy gate, confirm, send">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0e1622"/>
+      <stop offset="100%" stop-color="#0a0f18"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="920" height="640" rx="14" fill="url(#bg)"/>
+  <rect x="0.5" y="0.5" width="919" height="639" rx="14" fill="none" stroke="#243043"/>
+
+  <!-- titlebar -->
+  <rect width="920" height="44" rx="14" fill="#141c2b"/>
+  <rect y="30" width="920" height="14" fill="#141c2b"/>
+  <circle cx="26" cy="22" r="6" fill="#ff5f57"/>
+  <circle cx="48" cy="22" r="6" fill="#febc2e"/>
+  <circle cx="70" cy="22" r="6" fill="#28c840"/>
+  <text x="96" y="27" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="13" fill="#7b8ba3">Mail-Mcp — MCP session (profile: full)</text>
+
+  <!-- user bubble -->
+  <rect x="60" y="72" width="620" height="46" rx="10" fill="#1d2839"/>
+  <text x="80" y="101" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="17" fill="#e6edf7">Anything from my landlord? Tell him I will pay on Friday.</text>
+
+  <!-- read call -->
+  <text x="60" y="150" font-family="Consolas, Menlo, monospace" font-size="14" fill="#22d3ee">→ get_message</text>
+  <text x="60" y="170" font-family="Consolas, Menlo, monospace" font-size="14" fill="#6b7f9c">{ "message_id": "1042", "folder": "INBOX" }</text>
+
+  <rect x="60" y="186" width="800" height="86" rx="10" fill="#111a27" stroke="#243043"/>
+  <text x="82" y="212" font-family="Consolas, Menlo, monospace" font-size="13" fill="#8ea3bd">from   k.chan@landlord.example · 2026-10-30 09:12</text>
+  <text x="82" y="234" font-family="Consolas, Menlo, monospace" font-size="13" fill="#c9d6e8">subject Rent — November  ·  body 318 chars  ·  quoted_stripped true</text>
+  <text x="82" y="256" font-family="Consolas, Menlo, monospace" font-size="13" fill="#4b9e6f">trust untrusted  ·  tainted false  ·  spf pass / dkim pass / dmarc pass</text>
+
+  <!-- write attempt blocked by gate -->
+  <text x="60" y="302" font-family="Consolas, Menlo, monospace" font-size="14" fill="#22d3ee">→ reply_message</text>
+  <text x="60" y="322" font-family="Consolas, Menlo, monospace" font-size="14" fill="#6b7f9c">{ "message_id": "1042", "body": "Confirmed — payment goes out Friday.", "intent": "confirm rent date" }</text>
+
+  <rect x="60" y="338" width="800" height="66" rx="10" fill="#1b1418" stroke="#4a2730"/>
+  <text x="82" y="364" font-family="Consolas, Menlo, monospace" font-size="13" fill="#e0a34a">E_NEED_CONFIRM   gate: whitelist   k.chan@landlord.example is not in the allowlist</text>
+  <text x="82" y="386" font-family="Consolas, Menlo, monospace" font-size="13" fill="#8ea3bd">preview   to k.chan@landlord.example · subject Re: Rent — November · 44 chars</text>
+
+  <!-- confirmed send -->
+  <text x="60" y="432" font-family="Consolas, Menlo, monospace" font-size="14" fill="#22d3ee">→ reply_message</text>
+  <text x="60" y="452" font-family="Consolas, Menlo, monospace" font-size="14" fill="#6b7f9c">{ "message_id": "1042", "body": "…", "intent": "confirm rent date", "confirmed": true }</text>
+
+  <rect x="60" y="468" width="800" height="86" rx="10" fill="#101c17" stroke="#22412f"/>
+  <text x="82" y="494" font-family="Consolas, Menlo, monospace" font-size="13" fill="#4b9e6f">ok true   sent 2026-10-30 09:41   idempotency_key reply:1042</text>
+  <text x="82" y="516" font-family="Consolas, Menlo, monospace" font-size="13" fill="#8ea3bd">headers   X-Agent-Origin: mail-mcp/me@example.com   Auto-Submitted: auto-replied</text>
+  <text x="82" y="538" font-family="Consolas, Menlo, monospace" font-size="13" fill="#8ea3bd">audit     action reply · targets 1 · gate_hit whitelist · body not stored</text>
+
+  <text x="60" y="600" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="13" fill="#55647d">the write path never consumes message content — body and recipients come from the caller</text>
+</svg>
